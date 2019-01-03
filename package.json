@@ -1,0 +1,19 @@
+{
+  "name": "uber-server",
+  "version": "1.0.0",
+  "description": "Server for the Uber Clone. GraphQL, TypeScript, NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd src && nodemon --exec ts-node index.ts -e ts,graphql"
+  },
+  "repository": "https://github.com/9min/uber-server",
+  "author": "9min",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "nodemon": "^1.18.9",
+    "ts-node": "^7.0.1",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.2"
+  }
+}
