@@ -1,6 +1,12 @@
+import { Gretting } from '../../../types/graphql';
 const resolvers = {
   Query: {
-    sayHello: () => 'Hey Hello how are you'
+    sayHello: (): Gretting => {
+      return {
+        text: 'Hey Hello how are you',
+        error: false,
+      }
+    }
   }
 };
 
