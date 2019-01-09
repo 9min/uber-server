@@ -68,7 +68,12 @@ class User extends BaseEntity {
 
   get fullName(): string {
     return `${this.firstName} ${this.lastName}`;
-  }  
+  }
+
+  // 사용자가 입력한 비밀번호랑 암호화된 비밀번호 비교
+  public comparePassword(password: string): Promise<boolean> {
+    return bcrypt.compare(password, this.password);
+  }
 
   @BeforeInsert()
   @BeforeUpdate()
