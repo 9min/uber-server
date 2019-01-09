@@ -4,6 +4,7 @@
   "description": "Server for the Uber Clone. GraphQL, TypeScript, NodeJS",
   "main": "index.js",
   "scripts": {
+    "predev": "yarn run types",
     "dev": "cd src && nodemon --exec ts-node index.ts -e ts,graphql",
     "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
     "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graphql.d.ts"
@@ -26,7 +27,7 @@
     "typescript": "^3.2.2"
   },
   "dependencies": {
-    "bcrypt": "^3.0.3",
+    "bcrypt": "3.0.2",
     "class-validator": "^0.9.1",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
