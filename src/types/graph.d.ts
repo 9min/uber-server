@@ -81,6 +81,7 @@ export interface Ride {
 
 export interface Mutation {
   FacebookConnect: FacebookConnectResponse;
+  EmailSignIn: EmailSignInResponse;
 }
 
 export interface FacebookConnectMutationArgs {
@@ -105,4 +106,15 @@ export interface Place {
   isFav: boolean;
   createAt: string;
   updateAt: string | null;
+}
+
+export interface EmailSignInMutationArgs {
+  email: string;
+  password: string;
+}
+
+export interface EmailSignInResponse {
+  ok: boolean;
+  error: string | null;
+  token: string | null;
 }
