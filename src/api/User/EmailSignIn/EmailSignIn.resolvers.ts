@@ -1,6 +1,9 @@
-import { Resolvers } from '../../../types/resolvers';
-import { EmailSignInMutationArgs, EmailSignInResponse } from '../../../types/graph';
-import User from '../../../entities/User';
+import { Resolvers } from "../../../types/resolvers";
+import {
+  EmailSignInMutationArgs,
+  EmailSignInResponse
+} from "../../../types/graph";
+import User from "../../../entities/User";
 
 const resolvers: Resolvers = {
   Mutation: {
@@ -14,8 +17,8 @@ const resolvers: Resolvers = {
         if (!user) {
           return {
             ok: false,
-            error: 'No User found with that email',
-            token: null,
+            error: "No User found with that email",
+            token: null
           };
         }
         const checkPassword = await user.comparePassword(password);
@@ -23,20 +26,20 @@ const resolvers: Resolvers = {
           return {
             ok: true,
             error: null,
-            token: 'Coming soon',
+            token: "Coming soon"
           };
         } else {
           return {
             ok: false,
-            error: 'Wrong password',
-            token: null,
+            error: "Wrong password",
+            token: null
           };
         }
       } catch (error) {
         return {
           ok: false,
           error: error.message,
-          token: null,
+          token: null
         };
       }
     }
